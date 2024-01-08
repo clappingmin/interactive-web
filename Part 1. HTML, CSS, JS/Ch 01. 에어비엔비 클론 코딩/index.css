@@ -5,6 +5,10 @@ button {
 
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  height: 80px;
 }
 
 #logo {
@@ -13,7 +17,7 @@ header {
   background-color: gold;
 }
 
-#littel-search {
+#little-search {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -25,6 +29,12 @@ header {
   border-radius: 40px;
   padding: 0 8px;
   box-shadow: 0 1px 2px rgba(0 0 0 / 8%), 0 4px 12px rgba(0 0 0 / 5%);
+  cursor: pointer;
+}
+
+#little-search * {
+  /* 안에 모든 요소 선택자 */
+  cursor: pointer;
 }
 
 .littele-search_button {
@@ -55,4 +65,51 @@ header {
 
 .material-symbols-outlined {
   color: #fff;
+}
+
+#header-right-section {
+  display: flex;
+}
+
+#do-airbnb {
+  font-size: 16px;
+  color: #222;
+  font-weight: 600;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 22px;
+}
+
+#do-airbnb:hover {
+  background-color: #f7f7f7;
+}
+
+#category-bar {
+  display: flex;
+  padding: 20px 40px 0;
+  gap: 32px;
+  overflow: auto;
+}
+
+#category-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.category-button {
+  color: #717171;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 66px;
+  padding: 14px;
+}
+
+.category-button > .material-symbols-outlined {
+  color: #000;
+  width: 28px;
+}
+
+.category-button:hover {
+  color: #000;
+  border-bottom: 2px solid #ddd;
 }
