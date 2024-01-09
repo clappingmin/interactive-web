@@ -91,6 +91,7 @@ body {
   animation-iteration-count: infinite;
   transform-box: fill-box; /* 바깥에 감싸는 큰 박스를 중심으로 애니메이션이 동작하는 것을 막기 위해서 */
   transform-origin: center; /* 변형의 중심을 중앙으로 */
+  animation-timing-function: linear;
 }
 
 #planet_1 {
@@ -147,11 +148,13 @@ body {
   animation: appearFromBottom 3s;
   transform-box: fill-box;
   transform-origin: center;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 #alien_hand-L,
 #alien_hand-R {
   animation: shakingUpAndDown 1s infinite;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #number-0-soaking {
