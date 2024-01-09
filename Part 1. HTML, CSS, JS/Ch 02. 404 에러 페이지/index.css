@@ -1,27 +1,167 @@
-/*
- animation-name: moveToRight;
-  animation-duration: 2s;  얼마에 걸쳐서
-  animation-direction: alternate;
-  animation-iteration-count: infinite;  몇 번 걸쳐서 
-  animation-play-state: paused; 멈춤/재생 상태 지정 
-  animation-fill-mode: both; 애니메이션이 없을 때(끝날 때) 상태
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #24145e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-matrix: 모든 메소드 한번에 적용
-*/
-
-@keyframes moveToRight {
-  from {
-    color: red;
-  }
+@keyframes rotation {
   to {
-    color: yellow;
-    transform: translateX(300px);
+    transform: rotateZ(360deg);
   }
 }
 
-button {
-  color: black;
-  /* animation: moveToRight 2s; */
-  transform: rotate(90deg);
+@keyframes shrinkAndGrow {
+  0% {
+    transform: scale(0);
+  }
+
+  25% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(0);
+  }
+
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes expandHorizontal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes appearFromBottom {
+  from {
+    transform: translateY(1000px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shakingUpAndDown {
+  from {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes soaking {
+  to {
+    transform: translateY(-250px) scale(0);
+  }
+}
+
+@keyframes shrinkHorizontal {
+  to {
+    transform: scaleX(0);
+  }
+}
+
+#planet_2 {
+  animation-name: rotation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box; /* 바깥에 감싸는 큰 박스를 중심으로 애니메이션이 동작하는 것을 막기 위해서 */
+  transform-origin: center; /* 변형의 중심을 중앙으로 */
+}
+
+#planet_1 {
+  animation-name: rotation;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_6 {
+  animation: shrinkAndGrow 4s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_3 {
+  animation: shrinkAndGrow 9s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_5 {
+  animation: shrinkAndGrow 3s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_2 {
+  animation: shrinkAndGrow 7s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_1 {
+  animation: shrinkAndGrow 2s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#star_8 {
+  animation: shrinkAndGrow 11s infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#UFO-beam {
+  animation: expandHorizontal 3.5s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#number-0 {
+  animation: appearFromBottom 3s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#alien_hand-L,
+#alien_hand-R {
+  animation: shakingUpAndDown 1s infinite;
+}
+
+#number-0-soaking {
+  animation: soaking 2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+#UFO-beam-disappering {
+  animation: shrinkHorizontal 2s;
+  transform-box: fill-box;
+  transform-origin: center;
 }
