@@ -1,0 +1,27 @@
+/*
+ animation-name: moveToRight;
+  animation-duration: 2s;  얼마에 걸쳐서
+  animation-direction: alternate;
+  animation-iteration-count: infinite;  몇 번 걸쳐서 
+  animation-play-state: paused; 멈춤/재생 상태 지정 
+  animation-fill-mode: both; 애니메이션이 없을 때(끝날 때) 상태
+
+
+matrix: 모든 메소드 한번에 적용
+*/
+
+@keyframes moveToRight {
+  from {
+    color: red;
+  }
+  to {
+    color: yellow;
+    transform: translateX(300px);
+  }
+}
+
+button {
+  color: black;
+  /* animation: moveToRight 2s; */
+  transform: rotate(90deg);
+}
