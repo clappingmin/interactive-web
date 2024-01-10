@@ -9,15 +9,11 @@
 </head>
 
 <body>
-  <div id="div-1"></div>
-  <div id="div-2"></div>
+  <div id="parallax-wrapper">
+    <div id="parallax-A" class="parallax">A</div>
+    <div id="parallax-B" class="parallax">B</div>
+    <div id="parallax-C" class="parallax">C</div>
+  </div>
 </body>
-<script>
-  console.log(document.getElementById('div-1').style)
-
-  window.addEventListener('scroll', () => {
-    document.getElementById('div-1').style.transform = `translateY(${window.scrollY * 1.5}px)`
-  })
-</script>
 
 </html>
