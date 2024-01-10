@@ -1,30 +1,41 @@
-#parallax-wrapper {
-  height: 100vh;
-  overflow-x: hidden;
-  perspective: 1px;
+body {
+  height: 200vh;
+  background-color: #04120c;
 }
 
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+header {
+  height: 34px;
+  background: #04120c;
+  color: #b8e1ee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-#parallax-A {
-  background-color: red;
-  height: 150rem;
+.button-in-header {
+  padding: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  height: 34px;
+  box-sizing: border-box;
 }
 
-#parallax-B {
-  background-color: aqua;
-  height: 500px;
-  transform: translateZ(-2px);
+.button-in-header:hover {
+  background-color: #127374;
 }
 
-#parallax-C {
-  top: 500px;
-  background-color: blueviolet;
-  height: 500px;
-  transform: translateZ(-1px);
+#right-buttons {
+  display: flex;
+}
+
+#active-menu {
+  background-color: #013a3b;
+}
+
+#main-image {
+  min-width: 1000px;
+}
+
+#image-wrapper {
+  overflow: hidden;
 }
