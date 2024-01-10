@@ -1545,6 +1545,9 @@
 </body>
 
 <script>
+
+  let clientWidth = document.documentElement.clientWidth;
+
   // 이미지 컨트롤 
   const sun = document.getElementById('sun')
   const grayCloud = document.getElementById('gray-clouds')
@@ -1563,26 +1566,30 @@
   const mountain7 = document.getElementById('mountain7')
 
   window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
 
-    sun.style.transform = `translateY(${scrollY * 1.05}px)`
+    // 데스크탑 화면에서만 적용
+    if (clientWidth >= 800) {
+      const scrollY = window.scrollY;
 
-    grayCloud.style.transform = `translateX(${scrollY * 0.125}px)`
-    whiteCloud.style.transform = `translateX(${scrollY * -0.125}px)`
+      sun.style.transform = `translateY(${scrollY * 1.05}px)`
 
-    bird1.style.transform = `translateX(${scrollY}px)`
-    bird2.style.transform = `translateX(-${scrollY * 3.5}px)`
-    bird3.style.transform = `translateX(-${scrollY * 0.5}px)`
+      grayCloud.style.transform = `translateX(${scrollY * 0.125}px)`
+      whiteCloud.style.transform = `translateX(${scrollY * -0.125}px)`
 
-    mountain0.style.transform = `translateY(${scrollY * 0.95}px)` // 뒤에 있는애가 스크롤과 차이 안나게
-    mountain1.style.transform = `translateY(${scrollY * 0.93}px)`
-    mountain2.style.transform = `translateY(${scrollY * 0.9}px)`
-    mountain3.style.transform = `translateY(${scrollY * 0.8}px)`
-    mountain4.style.transform = `translateY(${scrollY * 0.7}px)`
-    mountain5.style.transform = `translateY(${scrollY * 0.6}px)`
-    mountain6.style.transform = `translateY(${scrollY * 0.3}px)`
-    mountain7.style.transform = `translateY(${scrollY * 0.1}px)` // 앞에는 스크롤과 차이가 나게 안움직여야 한다.
+      bird1.style.transform = `translateX(${scrollY}px)`
+      bird2.style.transform = `translateX(-${scrollY * 3.5}px)`
+      bird3.style.transform = `translateX(-${scrollY * 0.5}px)`
 
+      mountain0.style.transform = `translateY(${scrollY * 0.95}px)` // 뒤에 있는애가 스크롤과 차이 안나게
+      mountain1.style.transform = `translateY(${scrollY * 0.93}px)`
+      mountain2.style.transform = `translateY(${scrollY * 0.9}px)`
+      mountain3.style.transform = `translateY(${scrollY * 0.8}px)`
+      mountain4.style.transform = `translateY(${scrollY * 0.7}px)`
+      mountain5.style.transform = `translateY(${scrollY * 0.6}px)`
+      mountain6.style.transform = `translateY(${scrollY * 0.3}px)`
+      mountain7.style.transform = `translateY(${scrollY * 0.1}px)` // 앞에는 스크롤과 차이가 나게 안움직여야 한다.
+
+    }
   })
 
   // 헤더 컨트롤
@@ -1601,6 +1608,32 @@
 
     // 원하는 요소에 이동할 때 scrollIntoView option: behavior: smooth로 부드럽게 이동
     document.querySelector('#document-title').scrollIntoView({ behavior: "smooth" })
+  })
+
+  window.addEventListener('resize', () => {
+    clientWidth = document.documentElement.clientWidth;
+
+    if (clientWidth < 800) {
+      const scrollY = window.scrollY;
+
+      sun.style.transform = `translateY(0)`
+
+      grayCloud.style.transform = `translateX(0)`
+      whiteCloud.style.transform = `translateX(0)`
+
+      bird1.style.transform = `translateX(0)`
+      bird2.style.transform = `translateX(0)`
+      bird3.style.transform = `translateX(0)`
+
+      mountain0.style.transform = `translateY(0)`
+      mountain1.style.transform = `translateY(0)`
+      mountain2.style.transform = `translateY(0)`
+      mountain3.style.transform = `translateY(0)`
+      mountain4.style.transform = `translateY(0)`
+      mountain5.style.transform = `translateY(0)`
+      mountain6.style.transform = `translateY(0)`
+      mountain7.style.transform = `translateY(0)`
+    }
   })
 </script>
 
