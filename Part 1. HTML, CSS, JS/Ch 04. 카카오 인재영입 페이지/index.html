@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fast Bank</title>
+</head>
+
+<body>
+  <div id="main-img-wrapper">
+    <img width="320" src="./Lovepik_com-401339128-data-management-data-analysis-icon-free-vector-illustration-mate.png"
+      alt="coding image">
+  </div>
+  <div id="intro-main">
+    <p>이미 모두의 은행, 패스트뱅크</p>
+    <p>함께 일해요.</p>
+    <p id="join-us-text">Join us!</p>
+    <img id="down-arrow-icon" src="./down-arrow.png" alt="down arrow icon">
+  </div>
+
+  <ul id="list-item-wrapper">
+    <li class="list-item">26주 적금</li>
+    <li class="list-item">수민이</li>
+    <li class="list-item">플레이브</li>
+    <li class="list-item">행복한 하루</li>
+    <li class="list-item">재밌당</li>
+    <li class="list-item">아스테룸</li>
+    <li class="list-item">카엘룸</li>
+    <li class="list-item">기다릴게</li>
+    <li class="list-item">왜요왜요왜</li>
+    <li class="list-item">26주 적금</li>
+    <li class="list-item">수민이</li>
+    <li class="list-item">플레이브</li>
+    <li class="list-item">행복한 하루</li>
+    <li class="list-item">재밌당</li>
+    <li class="list-item">아스테룸</li>
+    <li class="list-item">카엘룸</li>
+    <li class="list-item">기다릴게</li>
+    <li class="list-item">왜요왜요왜</li>
+    <li class="list-item">26주 적금</li>
+    <li class="list-item">수민이</li>
+    <li class="list-item">플레이브</li>
+    <li class="list-item">행복한 하루</li>
+    <li class="list-item">재밌당</li>
+    <li class="list-item">아스테룸</li>
+    <li class="list-item">카엘룸</li>
+    <li class="list-item">기다릴게</li>
+    <li class="list-item">왜요왜요왜</li>
+    <li class="list-item">26주 적금</li>
+    <li class="list-item">수민이</li>
+    <li class="list-item">플레이브</li>
+    <li class="list-item">행복한 하루</li>
+    <li class="list-item">재밌당</li>
+    <li class="list-item">아스테룸</li>
+    <li class="list-item">카엘룸</li>
+    <li class="list-item">기다릴게</li>
+    <li class="list-item">왜요왜요왜</li>
+
+  </ul>
+</body>
+<script>
+
+  // list-item-wrapper의 offsetTop을 가지고 좀 더 유연하게 만들 수 있다.
+  const listStyleChangeStartY = 373;
+  const listStyleChangeEndY = 1744;
+  const listItems = document.querySelectorAll('.list-item')
+
+  const division = ((listStyleChangeEndY - listStyleChangeStartY) / listItems.length);
+
+  window.addEventListener('scroll', () => {
+
+    if (document.getElementById('on')) document.getElementById('on').removeAttribute('id');
+
+    if (window.scrollY > listStyleChangeStartY && window.scrollY < listStyleChangeEndY) {
+
+      const targetIndex = Math.round((window.scrollY - listStyleChangeStartY) / division)
+
+      if (listItems[targetIndex])
+        listItems[targetIndex].setAttribute('id', 'on')
+    }
+  })
+</script>
+
+</html>
